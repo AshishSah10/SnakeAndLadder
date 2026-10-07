@@ -48,7 +48,7 @@ public class StandardBoardEntitySetupStrategy implements BoardEntitySetupStrateg
         }
         int length = startingPos.value - endingPos.value;
 
-        return addEntityToBoard(board, length, startingPos, endingPos, BoardEntityType.SNAKE);
+        return BoardEntitySetupStrategy.addEntityToBoard(board, length, startingPos, endingPos, BoardEntityType.SNAKE);
     }
 
     private static boolean setupLadderEntity(Board board, Map.Entry<Integer, Integer> ladderEntry) {
@@ -61,25 +61,6 @@ public class StandardBoardEntitySetupStrategy implements BoardEntitySetupStrateg
         }
         int length = endingPos.value - startingPos.value;
 
-        return addEntityToBoard(board, length, startingPos, endingPos, BoardEntityType.LADDER);
-    }
-
-    private static boolean addEntityToBoard(Board board, int length, Cell startingPos, Cell endingPos, BoardEntityType type) {
-        BoardEntity boardEntity;
-        if(type == BoardEntityType.SNAKE)
-            boardEntity = new Snake(length, startingPos, endingPos);
-        else{
-            boardEntity = new Ladder(length, startingPos, endingPos);
-        }
-
-        // rechecking for thread-safe
-        if(!startingPos.setBoardEntity(boardEntity)){
-            return false;
-        }
-
-        startingPos.hasStartingOfBoardEntity = true;
-        endingPos.hasEndingOfBoardEntity = true;
-        board.addBoardEntity(boardEntity);
-        return true;
+        return BoardEntitySetupStrategy.addEntityToBoard(board, length, startingPos, endingPos, BoardEntityType.LADDER);
     }
 }
