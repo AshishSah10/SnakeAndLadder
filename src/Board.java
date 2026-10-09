@@ -41,14 +41,14 @@ public class Board {
     }
 
     public void displayBoard(){
-        for(int i = 0; i < 100; i+=10){
+        for(int i = 0; i < this.getSize(); i+=10){
             for(int j = 1; j <= 10; j++) {
                 System.out.print("[" + cells[i+j] + "] ");
             }
             System.out.println();
         }
         System.out.println("-------------");
-        for(int i = 0; i < 100; i+=10){
+        for(int i = 0; i < this.getSize(); i+=10){
             for(int j = 1; j <= 10; j++) {
                 if(cells[i+j].getBoardEntity() != null) {
                     System.out.print("[" + cells[i+j].getBoardEntity().display() + "] ");

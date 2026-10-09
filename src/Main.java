@@ -4,7 +4,8 @@ public class Main {
         System.out.println("!!! WELCOME TO SNAKE & LADDER GAME!!!");
         // SnakeAndLadderGameController slgc = new SnakeAndLadderGameController(100, new Player[]{new Player("player1"), new Player("player2")}, RuleFactory.RULETYPE.STANDARD, BoardEntitySetupFactory.BOARD_ENTITY_SETUP_TYPE.STANDARD);
 
-        SnakeAndLadderGameController slgc = new SnakeAndLadderGameController(100, new Player[]{new Player("player1"), new Player("player2")}, RuleFactory.RULETYPE.STANDARD, BoardEntitySetupFactory.BOARD_ENTITY_SETUP_TYPE.RANDOM);
+        // SnakeAndLadderGameController slgc = new SnakeAndLadderGameController(1000, new Player[]{new Player("player1"), new Player("player2")}, RuleFactory.RULETYPE.STANDARD, BoardEntitySetupFactory.BOARD_ENTITY_SETUP_TYPE.RANDOM);
+        SnakeAndLadderGameController slgc = new SnakeAndLadderGameController(100, new Player[]{new Player("player1"), new Player("player2")}, RuleFactory.RULETYPE.STANDARD, BoardEntitySetupFactory.BOARD_ENTITY_SETUP_TYPE.CUSTOM);
 
 
         SnakeAndLadderGame game = slgc.getGame();
